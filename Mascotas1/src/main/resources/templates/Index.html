@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" Type="text/css" th:href="@{css/miestilo.css}">
+<script type="text/javascript" th:src="@{js/miscript.js} "></script>
+<title>Huellas Por La Vida</title>
+</head>
+<body>
+	<div>
+		<center>
+			<p>
+				<a th:href="@{/nuevamascota}">Agregar Mascotas</a>
+			</p>
+		</center>
+		<table class="tableFormato">
+			<thead>
+				<tr>
+					<th>Codigo</th>
+					<th>Raza</th>
+					<th>Estado</th>
+					<th>Peso</th>
+					<th>Edad</th>
+					<th>Color</th>
+				</tr>
+			</thead>
+			<tbody th:each="Rmascotas:${mascotas}">
+				<tr>
+					<td><font th:text="${Rmascotas.cod}"></font></td>
+					<td><font th:text="${Rmascotas.Raza}"></font></td>
+					<td><font th:text="${Rmascotas.Estado}"></font></td>
+					<td><font th:text="${Rmascotas.Peso}"></font></td>
+					<td><font th:text="${Rmascotas.Edad}"></font></td>
+					<td><font th:text="${Rmascotas.Color}"></font></td>
+					<td> <a th:href="@{/editarmascotas/} + ${Rmascotas.cod}" >Editar</a>|
+					<a th:href="@{/eliminarmascotas/} + ${Rmascotas.cod}">Eliminar</a> </td>
+				</tr>
+		</table>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" Type="text/css" th:href="@{css/miestilo.css}">
+<title>Huellas-Agregar Nueva Mascotas</title>
+</head>
+<body>
+	<form name="adicionarmascota" th:action="@{/savemascotas}" th:object="${mascotas}" method="POST">
+		<table>
+			<tr>
+				<td>Codigo:</td>
+				<td><input type="text" name="Cod" id="cod" required th:fiel="*{Cod}">
+			</tr>
+			<tr>
+				<td>Raza:</td>
+				<td><input type="text" name="Raza" id="Raza" required  th:fiel="*{Raza}">
+			</tr>
+			<tr>
+				<td>Estado:</td>
+				<td><input type="text" name="Estado" id="Estado" required  th:fiel="*{Estado}">
+			</tr>
+			<tr>
+				<td>Peso:</td>
+				<td><input type="text" name="Peso" id="Peso" required th:fiel="*{Peso}">
+			</tr>
+
+			<tr>
+				<td>Edad:</td>
+				<td><input type="text" name="Edad" id="Edad" required  th:fiel="*{Edad}">
+			</tr>
+			<tr>
+				<td>Color:</td>
+				<td><input type="text" name="Color" id="Color" required   th:fiel="*{Color}">
+			</tr>
+			
+			<tr>
+				<td></td>
+				<td><input type="submit" value="Agregar Macota">
+			</tr>
+		</table>
+
+	</form>
+</body>
+</html>
